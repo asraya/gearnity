@@ -5,15 +5,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
-    <link rel="stylesheet" href="{{ asset('mazer') }}/assets/css/main/app.css" />
+    <link rel="stylesheet" href="{{ asset('dashboard') }}/assets/css/main/app.css" />
     <link
       rel="shortcut icon"
-      href="{{ asset('mazer') }}/assets/images/logo/favicon.svg"
+      href="{{ asset('dashboard') }}/assets/images/logo/favicon.svg"
       type="image/x-icon"
     />
     <link
       rel="shortcut icon"
-      href="{{ asset('mazer') }}/assets/images/logo/favicon.png"
+      href="{{ asset('dashboard') }}/assets/images/logo/favicon.png"
       type="image/png"
     />
     
@@ -24,7 +24,7 @@
       <div class="container-fluid d-block">
         <a href="{{ route('frontend.user.course.index') }}"><i class="bi bi-chevron-left"></i></a>
         <a class="navbar-brand ms-4" href="{{ route('frontend.user.course.index') }}">
-          <img src="{{ asset('mazer') }}/assets/images/logo/logo.svg" />
+          <img src="{{ asset('dashboard') }}/assets/images/logo/logo.svg" />
         </a>
       </div>
     </nav>
@@ -78,8 +78,8 @@
                             <div class="alert {{ $detail['number'] == $data['current_course']->number ? 'alert-primary' : 'alert-secondary' }}"><i data-feather="video"></i> {{ $detail->number }}.{{ $detail->name }}
                             </div>
                         </a>
-                    @endforeach
-                </div>
+                    @endforeach 
+                 </div>
             </div>
         </div>
       </div>

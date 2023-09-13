@@ -25,22 +25,28 @@
                 <x-forms.input type="number" name="price" id="price" :isRequired="true" value="0"
                     :label="__('field.course_price')" />
                 <x-forms.input type="file" name="image" id="image" :isRequired="true" :label="__('field.image')" />
-                <x-forms.input type="textarea" name="description" id="description" :isRequired="true" :label="__('field.description')" />
+                <textarea class="ckeditor form-control" type="textarea" name="description" id="description" isRequired="true" label="__('field.description')"></textarea>
+
                 <x-forms.input type="number" name="" id="total_video" :isRequired="true" :label="__('Total Video')" />
                 <span id="message-total"></span>
                 <div class="text-end">
                     <button type="button" id="btnProcess" class="btn btn-success">{{ __('button.process') }}</button>
                 </div>
+              
     </div>
     </div>
     <div class="card">
         <div class="card-header d-flex justify-content-between">
             <h4 class="card-title">Item {{ __('sidebar.course') }}</h4>
-        </div>
-        <div class="card-body" id="form-detail">
 
+            
         </div>
+
+        <div class="card-body" id="form-detail"></div>
+        
     </div>
+   
+
     </form>
 @endsection
 @push('js')
@@ -75,14 +81,28 @@
                         <input type="text" name="duration[]" aria-label="Url Youtube" class="form-control" placeholder="Durasi" required>
                         </div>
                 </fieldset>   
+                
         `)
             }
+           
+
             $('#form-detail').append(`
             <div class="text-end">
+                <textarea class="ckeditor form-control" type="textarea" name="exam" id="exam" isRequired="true" label="__('field.description')"></textarea>
+
                     <button type="submit" class="btn btn-primary">{{ __('button.save') }}</button>
                 </div>
-            `)
-            }
+            `)            
+
+        }
+            
         })
     </script>
+  
+     <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+     <script type="text/javascript">
+         $(document).ready(function () {
+             $('#description').ckeditor();
+         });
+     </script>
 @endpush

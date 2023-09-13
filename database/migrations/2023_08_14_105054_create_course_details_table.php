@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('course_details', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('course_id')->constrained()->onDelete('cascade');
+            $table->foreignUuid('course_id')->constrained()->onDelete('cascade');
             $table->integer('number');
             $table->string('name');
             $table->text('link');

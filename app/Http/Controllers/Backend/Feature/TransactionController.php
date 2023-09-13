@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Feature\Transaction;
 use App\Repositories\BaseRepository;
 use Illuminate\Http\Request;
+use Ramsey\Uuid\Uuid;
 
 class TransactionController extends Controller
 {
@@ -14,6 +15,7 @@ class TransactionController extends Controller
     public function __construct(Transaction $transaction)
     {
         $this->transaction = new BaseRepository($transaction);
+        $transaction->id = Uuid::uuid4()->toString();
     }
 
     public function index(TransactionDatatable $datatable)

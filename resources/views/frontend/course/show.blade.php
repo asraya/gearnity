@@ -4,8 +4,8 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-body">
-                        <iframe class="w-100 rounded" height="400"
+                    <div class="card-body" >
+                        <iframe class="w-100 rounded" height="400"  allowfullscreen
                             src="https://www.youtube.com/embed/{{ $data['course']['detail'][0]['link'] }}">
                         </iframe>
                         <h2>{{ $data['course']['name'] }}</h2>
@@ -32,7 +32,7 @@
                                     @foreach ($data['course']['detail'] as $detail)
                                         <div class="alert alert-secondary"><i data-feather="video"></i>
                                             {{ $detail->number }}.{{ $detail->name }}</div>
-                                    @endforeach
+                                    @endforeach                       
                                 </div>
                             </div>
                         </div>

@@ -10,6 +10,9 @@
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <a href="{{ url('/') }}"
+            type="button" class="btn btn-outline-primary"><i class="bi bi-house-door">
+              </i></a>  
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-lg-0">
                     <li class="nav-item dropdown me-3">
@@ -53,11 +56,11 @@
                         <div class="user-menu d-flex">
                             <div class="user-name text-end me-3">
                                 <h6 class="mb-0 text-gray-600">{{ auth()->user()->name }}</h6>
-                                <p class="mb-0 text-sm text-gray-600">Administrator</p>
+                                <p class="mb-0 text-sm text-gray-600">{{ auth()->user()->role_name }}</p>
                             </div>
                             <div class="user-img d-flex align-items-center">
                                 <div class="avatar avatar-md">
-                                    <img src="{{ asset('mazer') }}/assets/images/faces/1.jpg">
+                                    <img src="{{ asset('dashboard') }}/assets/images/faces/1.jpg">
                                 </div>
                             </div>
                         </div>
@@ -66,7 +69,7 @@
                         <li>
                             <h6 class="dropdown-header">Hello, {{ auth()->user()->name }}!</h6>
                         </li>
-                        <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-person me-2"></i> My
+                        <li><a class="dropdown-item" href="{{ route('profile') }}"><i class="icon-mid bi bi-person me-2"></i> My
                                 Profile</a></li>
                         <li>
                             <hr class="dropdown-divider">

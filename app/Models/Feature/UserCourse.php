@@ -5,14 +5,17 @@ namespace App\Models\Feature;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\Uuid;
 
 class UserCourse extends Model
 {
-    use HasFactory;
+    use HasFactory, Uuid;
     protected $guarded = [''];
     protected $appends =[
         'progress_percent'
     ];
+    public $incrementing = false;
+
 
     public function Course()
     {

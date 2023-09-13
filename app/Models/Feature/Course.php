@@ -5,13 +5,15 @@ namespace App\Models\Feature;
 use App\Models\Master\Category;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\Uuid;
 
 class Course extends Model
 {
-    use HasFactory;
+    use HasFactory, Uuid;
     protected $guarded = [];
     protected $appends = ['total_duration','total_video','total_item','mitra_name','type_name','image_path','price_rupiah','total_student'];
-    
+    public $incrementing = false;
+
     // Relation
     public function Detail()
     {

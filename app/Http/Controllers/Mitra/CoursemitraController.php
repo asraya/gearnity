@@ -12,6 +12,7 @@ use App\Models\Master\Category;
 use App\Repositories\BaseRepository;
 use Illuminate\Http\Request;
 use Str;
+
 class CoursemitraController extends Controller
 {
     protected $category,$course,$courseDetail;
@@ -116,6 +117,16 @@ class CoursemitraController extends Controller
             }
 
             return redirect()->route('frontend.mitra.course.index')->with('success',__('message.update'));
+        } catch (\Throwable $th) {
+            return view('error.index',['message' => $th->getMessage()]);
+        }
+    }
+
+    public function delete($id)
+    {
+        try {
+            $this->course->delete($id);
+            return redirect()->route('frontend.mitra.course.index')->with('success',__('message.delete'));
         } catch (\Throwable $th) {
             return view('error.index',['message' => $th->getMessage()]);
         }

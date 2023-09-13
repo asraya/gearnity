@@ -5,10 +5,12 @@ namespace App\Models\Feature;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\Uuid;
 
 class Transaction extends Model
 {
-    use HasFactory;
+    use HasFactory, Uuid;
+    public $incrementing = false;
     protected $guarded = [];
     protected $appends = ['course_name','html_status','buyer_name'];
     // Relation

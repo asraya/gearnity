@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $app_name }}</title>
 
-    <link rel="stylesheet" href="{{ asset('mazer') }}/assets/css/main/app.css">
+    <link rel="stylesheet" href="{{ asset('dashboard') }}/assets/css/main/app.css">
 
-    <link rel="shortcut icon" href="{{ asset('mazer') }}/assets/images/logo/favicon.svg" type="image/x-icon">
-    <link rel="shortcut icon" href="{{ asset('mazer') }}/assets/images/logo/favicon.png" type="image/png">
-    <link rel="stylesheet" href="{{ asset('mazer') }}/assets/css/pages/fontawesome.css">
+    <link rel="shortcut icon" href="{{ asset('dashboard') }}/assets/images/logo/favicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('dashboard') }}/assets/images/logo/favicon.png" type="image/png">
+    <link rel="stylesheet" href="{{ asset('dashboard') }}/assets/css/pages/fontawesome.css">
     <link rel="stylesheet"
-        href="{{ asset('mazer') }}/assets/extensions/datatables.net-bs5/css/dataTables.bootstrap5.min.css">
-    <link rel="stylesheet" href="{{ asset('mazer') }}/assets/css/pages/datatables.css">
-    <link rel="stylesheet" href="{{ asset('mazer') }}/assets/extensions/toastify-js/src/toastify.css" />
-    <link rel="stylesheet" href="{{ asset('mazer') }}/assets/extensions/sweetalert2/sweetalert2.min.css" />
-    <link rel="stylesheet" href="{{ asset('mazer') }}/assets/css/shared/iconly.css" />
+        href="{{ asset('dashboard') }}/assets/extensions/datatables.net-bs5/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="{{ asset('dashboard') }}/assets/css/pages/datatables.css">
+    <link rel="stylesheet" href="{{ asset('dashboard') }}/assets/extensions/toastify-js/src/toastify.css" />
+    <link rel="stylesheet" href="{{ asset('dashboard') }}/assets/extensions/sweetalert2/sweetalert2.min.css" />
+    <link rel="stylesheet" href="{{ asset('dashboard') }}/assets/css/shared/iconly.css" />
     @stack('css')
 </head>
 
@@ -36,16 +36,16 @@
             </div>
         </div>
     </div>
-    <script src="{{ asset('mazer') }}/assets/js/bootstrap.js"></script>
-    <script src="{{ asset('mazer') }}/assets/js/app.js"></script>
+    <script src="{{ asset('dashboard') }}/assets/js/bootstrap.js"></script>
+    <script src="{{ asset('dashboard') }}/assets/js/app.js"></script>
 
-    <script src="{{ asset('mazer') }}/assets/extensions/jquery/jquery.min.js"></script>
+    <script src="{{ asset('dashboard') }}/assets/extensions/jquery/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.js"></script>
-    <script src="{{ asset('mazer') }}/assets/js/pages/datatables.js"></script>
-    <script src="{{ asset('mazer') }}/assets/extensions/toastify-js/src/toastify.js"></script>
-    <script src="{{ asset('mazer') }}/assets/js/pages/toastify.js"></script>
+    <script src="{{ asset('dashboard') }}/assets/js/pages/datatables.js"></script>
+    <script src="{{ asset('dashboard') }}/assets/extensions/toastify-js/src/toastify.js"></script>
+    <script src="{{ asset('dashboard') }}/assets/js/pages/toastify.js"></script>
 
-    <script src="{{ asset('mazer') }}/assets/extensions/sweetalert2/sweetalert2.min.js"></script>
+    <script src="{{ asset('dashboard') }}/assets/extensions/sweetalert2/sweetalert2.min.js"></script>
     <script>
         function hapus(url) {
             Swal.fire({

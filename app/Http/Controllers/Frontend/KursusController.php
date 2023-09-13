@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Feature\Course;
 use App\Repositories\BaseRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class KursusController extends Controller
 {

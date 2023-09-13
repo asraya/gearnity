@@ -31,13 +31,13 @@ class UserDatatable extends DataTable
             [
                 'title' => 'Hapus',
                 'icon' => 'bi bi-trash',
-                'route' => route('backend.master.category.delete',$id),
+                'route' => route('backend.master.user.delete',$id),
                 'type' => 'delete',
             ],
             [
                 'title' => 'Edit',
                 'icon' => 'bi bi-pen',
-                'route' => route('backend.master.category.edit',$id),
+                'route' => route('backend.master.user.edit',$id),
                 'type' => '',
             ],
         ];

@@ -9,7 +9,6 @@
                 </div>
             </div>
             <div class="card-body">
-
                 @csrf
                 <x-forms.input name="name" id="name" :isRequired="true" :value="$data['course']['name']" :label="__('field.course_name')" />
                 <x-forms.select name="categorie_id" id="categorie_id" :isRequired="true" :label="__('field.course_category')">
@@ -25,7 +24,7 @@
                 <x-forms.input type="number" name="price" id="price" :isRequired="true" value="0"
                     :label="__('field.course_price')" :value="$data['course']['price']" />
                 <x-forms.input type="file" name="image" id="image" :label="__('field.image')" hintText="Kosongkan jika tidak akan mengubah gambar" />
-                <x-forms.input type="textarea" name="description" id="description" :isRequired="true" :label="__('field.description')" :value="$data['course']['description']"/>
+                <textarea class="ckeditor form-control" type="textarea" name="description" id="description" isRequired="true" label="__('field.description')">{{ $data['course']['description'] }}</textarea>
                 <x-forms.input type="number" name="" id="total_video" :isRequired="true" :label="__('Total Video')" :value="$data['course']['total_item']" hintText="Dengan Mengklik Tombol Proses Maka Akan Mengosongkan Formulir Dibawah Ini"/>
                 <span id="message-total"></span>
                 <div class="text-end">
@@ -55,9 +54,21 @@
             </div>
         </div>
     </div>
+    <div class="card">
+        <div class="card-header d-flex justify-content-between">
+            <h4 class="card-title">Item {{ __('sidebar.course') }}</h4>
+        </div>
+        <div class="card-body" id="form-detail">           
+            <textarea class="ckeditor form-control" type="textarea" name="description" id="description" isRequired="true" label="__('field.description')">{{ $data['course']['description'] }}</textarea>
+        <div class="text-end">
+            <button type="submit" class="btn btn-primary">{{ __('button.update') }}</button>
+        </div>
+        </div>
+    </div>
     </form>
 @endsection
 @push('js')
+
     <script>
         $('#type').on('change', function() {
             var type = $(this).find(":selected").val();
@@ -88,9 +99,11 @@
                         <input type="text" name="detail_link[]" aria-label="Url Youtube" class="form-control" placeholder="Url Youtube" required>
                         <input type="text" name="duration[]" aria-label="Url Youtube" class="form-control" placeholder="Durasi" required>
                         </div>
-                </fieldset>   
+                </fieldset> 
+
         `)
-            }
+            }        
+            
             $('#form-detail').append(`
             <div class="text-end">
                     <button type="submit" class="btn btn-primary">{{ __('button.save') }}</button>
@@ -99,4 +112,10 @@
             }
         })
     </script>
+     <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+     <script type="text/javascript">
+         $(document).ready(function () {
+             $('.ckeditor').ckeditor();
+         });
+     </script>
 @endpush

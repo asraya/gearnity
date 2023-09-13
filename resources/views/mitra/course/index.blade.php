@@ -5,6 +5,8 @@
         <h4 class="card-title">Data {{ __('sidebar.course') }}</h4>
         <div class="card-header-action">
             <a href="{{ route('frontend.mitra.course.create') }}" class="btn btn-primary">{{ __('button.add') }} {{ __('sidebar.course') }}</a>
+            <a href="{{ route('frontend.mitra.exam.create') }}" class="btn btn-primary">Exam</a>
+
         </div>
     </div>
     <div class="card-body">

@@ -1,4 +1,55 @@
-<x-guest-layout>
+@extends('layouts.guest.app')
+@section('content')
+<div class="row h-100">
+    <div class="col-lg-5 col-12">
+        <div id="auth-left">
+            <h3 class="auth-title">Log in.</h3>
+
+            <form method="POST" action="{{ route('password.update') }}">
+                @csrf
+                <input type="hidden"  class="form-control" name="token" value="{{ $request->route('token') }}">
+                <div class="form-group position-relative has-icon-left mb-4">
+                    <input type="text" class="form-control" placeholder="Email" name="email">
+                    <div class="form-control-icon">
+                        <i class="bi bi-person"></i>
+                    </div>
+                </div>
+                <div class="form-group position-relative has-icon-left mb-4">
+                    <input type="password" class="form-control" placeholder="Password"
+                        name="password">
+                    <div class="form-control-icon">
+                        <i class="bi bi-shield-lock"></i>
+                    </div>
+                </div>
+                <div class="form-group position-relative has-icon-left mb-4">
+                    <input type="password" class="form-control" placeholder="Confirm Password"
+                        name="password_confirmation">
+                    <div class="form-control-icon">
+                        <i class="bi bi-shield-lock"></i>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block btn-lg shadow-lg mt-5">{{ __('Reset Password') }}</button>
+            </form>
+            <br>
+            <center>
+                <a class="btn btn-border btn-google-login" href="{{ route('user.login.google') }}">
+                    <img src="{{ asset('web') }}/assets/images/ic_google.svg" class="img-fluid" alt="login google"> Sign In with Google
+                </a>
+            </center>
+            <div class="text-center mt-5 text-lg fs-5">
+                <p class="text-gray-600">Don't have an account?<a href="{{ route('register') }}" class="font-bold">Sign up</a></p>
+                <p><a class="font-bold" href="{{ route('forgot-password') }}">Forgot password?</a>.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-7 d-none d-lg-block">
+        <img class="img-fluid" src="{{ asset('web') }}/assets/img/login.png" alt="">
+
+    </div>
+
+</div>
+@endsection
+{{-- <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
@@ -48,4 +99,4 @@
             </div>
         </form>
     </x-auth-card>
-</x-guest-layout>
+</x-guest-layout> --}}

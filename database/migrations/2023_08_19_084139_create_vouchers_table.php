@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('user_courses', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('course_id')->constrained()->onDelete('cascade');
-            $table->unsignedBigInteger('progress');
-            $table->integer('status')->default(0);
+        Schema::create('vouchers', function (Blueprint $table) {
+            $table->uuid('id')->primary();
+            $table->string('name_voucher');
+            $table->string('code_voucher');
+            $table->string('status');
+            $table->string('total_redeem');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_courses');
+        Schema::dropIfExists('vouchers');
     }
 };

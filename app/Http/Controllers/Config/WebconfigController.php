@@ -38,7 +38,7 @@ class WebconfigController extends Controller
                 if ($request->file('field.' . $key)) {
                     $cek = $this->web->find($key);
                     if ($cek[$key] != null) {
-                        File::delete('storage/' . $cek['value']);
+                        File::delete('storage/app/' . $cek['value']);
                     }
                     $value = $request->file('field.' . $key)->store('config/web', 'public');
                     $this->web->Query()->find($key)->update(

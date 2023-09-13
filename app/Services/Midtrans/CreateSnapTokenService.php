@@ -1,7 +1,7 @@
 <?php 
 
 namespace App\Services\Midtrans;
- 
+
 use Midtrans\Snap;
  
 class CreateSnapTokenService extends Midtrans
@@ -24,8 +24,8 @@ class CreateSnapTokenService extends Midtrans
                 'gross_amount' => $this->order->total_pay,
             ],
             'customer_details' => [
-                'first_name' => $this->user->first_name ?? 'Customer',
-                'email' => $this->user->email ?? 'Customer@mail.com',
+                'first_name' => auth()->user()->name,
+                'email' => auth()->user()->email,
                 'phone' => $this->order->phone ?? '081222888777',
             ]
         ];

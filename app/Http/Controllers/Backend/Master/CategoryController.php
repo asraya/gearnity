@@ -9,6 +9,7 @@ use App\Models\Master\Category;
 use App\Repositories\BaseRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Ramsey\Uuid\Uuid;
 
 class CategoryController extends Controller
 {
@@ -16,6 +17,7 @@ class CategoryController extends Controller
     public function __construct(Category $category)
     {
         $this->category = new BaseRepository($category);
+        $category->id = Uuid::uuid4()->toString();
     }
 
     public function index(CategoryDataTable $datatable)
@@ -56,9 +58,12 @@ class CategoryController extends Controller
 
     public function store(CategoryRequest $request)
     {
+
+
         try {
             $request->merge(['slug' => Str::slug($request->name)]);
             $this->category->store($request->all());
+
             return redirect()->route('backend.master.category.index')->with('success',__('message.store'));
         } catch (\Throwable $th) {
            return view('error.index',['message' => $th->getMessage()]);

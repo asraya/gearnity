@@ -10,38 +10,24 @@
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <a href="{{ route('frontend.user.claim-voucher.index') }}"
+            type="button" class="btn btn-outline-primary"><i class="bi bi-ticket-perforated-fill">
+              </i>  Claim voucher</a>  &nbsp;&nbsp;&nbsp;  
+              <a href="{{ url('/') }}"
+            type="button" class="btn btn-outline-primary"><i class="bi bi-house-door">
+              </i></a>                     
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-lg-0">
-                    <li class="nav-item dropdown me-3">
+                    <li class="dropdown dropdown-notifications">
                         <a class="nav-link active dropdown-toggle text-gray-600" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                            <i class='bi bi-bell bi-sub fs-4'></i>
+                            <i data-count="0" class="bi bi-bell-fill notification-icon"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end notification-dropdown" aria-labelledby="dropdownMenuButton">
                             <li class="dropdown-header">
-                                <h6>Notifications</h6>
+                                <h6 class="dropdown-toolbar-title">Notifications (<span class="notif-count">0</span>)</h6>
                             </li>
-                            <li class="dropdown-item notification-item">
-                                <a class="d-flex align-items-center" href="#">
-                                    <div class="notification-icon bg-primary">
-                                        <i class="bi bi-cart-check"></i>
-                                    </div>
-                                    <div class="notification-text ms-4">
-                                        <p class="notification-title font-bold">Successfully check out</p>
-                                        <p class="notification-subtitle font-thin text-sm">Order ID #256</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="dropdown-item notification-item">
-                                <a class="d-flex align-items-center" href="#">
-                                    <div class="notification-icon bg-success">
-                                        <i class="bi bi-file-earmark-check"></i>
-                                    </div>
-                                    <div class="notification-text ms-4">
-                                        <p class="notification-title font-bold">Homework submitted</p>
-                                        <p class="notification-subtitle font-thin text-sm">Algebra math homework</p>
-                                    </div>
-                                </a>
-                            </li>
+                           <ul class="dropdown-menu">
+                            </ul>
                             <li>
                                 <p class="text-center py-2 mb-0"><a href="#">See all notification</a></p>
                             </li>
@@ -53,11 +39,15 @@
                         <div class="user-menu d-flex">
                             <div class="user-name text-end me-3">
                                 <h6 class="mb-0 text-gray-600">{{ auth()->user()->name }}</h6>
-                                <p class="mb-0 text-sm text-gray-600">Administrator</p>
+                                <p class="mb-0 text-sm text-gray-600">{{ auth()->user()->role_name }}</p>
                             </div>
                             <div class="user-img d-flex align-items-center">
                                 <div class="avatar avatar-md">
-                                    <img src="{{ asset('mazer') }}/assets/images/faces/1.jpg">
+                                    @if (Auth::user()->avatar)
+                                    <img src="{{Auth::user()->avatar}}" class="user-photo" alt="avatar-{{ Auth::user()->name }}">
+                                    @else
+                                    <img src="{{ asset('mazer') }}/assets/images/faces/1.jpg" class="user-photo">
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -66,8 +56,11 @@
                         <li>
                             <h6 class="dropdown-header">Hello, {{ auth()->user()->name }}!</h6>
                         </li>
-                        <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-person me-2"></i> My
+                        <li><a class="dropdown-item" href="{{route('user.profile')}}"><i class="icon-mid bi bi-person me-2"></i> My
                                 Profile</a></li>
+                        <li>
+                        <li><a class="dropdown-item" href="{{route('user.profile')}}"><i class="icon-mid bi bi-coin me-2"></i> 
+                                0 Points</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>

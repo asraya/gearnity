@@ -8,7 +8,18 @@
     <div class="card-body">
         <div class="row">
             <div class="col-md-6">
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
+                    <div class="form-group position-relative has-icon-left mb-4">
+                        <input type="text" class="form-control" placeholder="Email"
+                            name="email"><span></span>
+                            <button type="submit" class="btn btn-primary btn-block btn-lg shadow-lg mt-5">cek voucher</button>
+                    </div>
+                </form>
+                
+                
                 <table>
+                    
                     @if (auth()->user()->role_name == 'mitra')
                     <tr>
                         <th>{{ __('field.transaction_buyer') }}</th>
@@ -29,7 +40,8 @@
                     </tr>
                     <tr>
                         <th>{{ __('field.transaction_total_pay') }}</th>
-                        <td>: {{ $data['transaction']['total_pay'] }}</td>
+                        <td>: {{ $data['transaction']['total_pay'] * (1 - ($data['transaction']['discount'] / 100))}}</td>
+                        
                     </tr>
                 </table>
             </div>
@@ -46,7 +58,7 @@
 </div>
 @endsection
 @push('js')
-<script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('midtrans.client_key') }}">
+<script src="https://app.midtrans.com/snap/snap.js" data-client-key="{{ config('midtrans.client_key') }}">
 </script>
 <script>
     const payButton = document.querySelector('#pay-button');

@@ -13,8 +13,19 @@ return [
     'date' => 'Date',
     'amount' => 'Amount',
     'status' => 'Status',
+    // Voucher
+    'voucher_name' => 'Voucher Name',
+
+    // Reward
+    'reward_name' => 'Reward Name',
+
     // Category
     'category_name' => 'Category Name',
+
+    // Blog
+    'blog_title' => 'Title',
+    'blog_content' => 'Content',
+    'blog_image' => 'Image',
 
     // User
     'user_name' => 'User Name',

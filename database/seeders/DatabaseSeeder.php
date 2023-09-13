@@ -16,5 +16,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(UserSeeder::class);
         $this->call(WebconfigSeeder::class);
+        $this->call(CategorySeeder::class);
+
     }
 }

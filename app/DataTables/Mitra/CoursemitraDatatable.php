@@ -44,7 +44,7 @@ class CoursemitraDatatable extends DataTable
             [
                 'title' => 'Hapus',
                 'icon' => 'bi bi-trash',
-                'route' => route('backend.master.category.delete',$id),
+                'route' => route('frontend.mitra.course.delete',$id),
                 'type' => 'delete',
             ],
         ];

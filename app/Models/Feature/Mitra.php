@@ -5,12 +5,14 @@ namespace App\Models\Feature;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\Uuid;
 
 class Mitra extends Model
 {
-    use HasFactory;
+    use HasFactory, Uuid;
     protected $fillable = ['name','user_id','logo','slug','description','join_at','is_approved'];
     protected $appends = ['html_status','logo_path'];
+    public $incrementing = false;
 
     public function User()
     {

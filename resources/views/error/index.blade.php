@@ -5,16 +5,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Error</title>
-    <link rel="stylesheet" href="{{ asset('mazer') }}/assets/css/main/app.css" />
-    <link rel="stylesheet" href="{{ asset('mazer') }}/assets/css/pages/error.css" />
+    <link rel="stylesheet" href="{{ asset('dashboard') }}/assets/css/main/app.css" />
+    <link rel="stylesheet" href="{{ asset('dashboard') }}/assets/css/pages/error.css" />
     <link
       rel="shortcut icon"
-      href="{{ asset('mazer') }}/assets/images/logo/favicon.svg"
+      href="{{ asset('dashboard') }}/assets/images/logo/favicon.svg"
       type="image/x-icon"
     />
     <link
       rel="shortcut icon"
-      href="{{ asset('mazer') }}/assets/images/logo/favicon.png"
+      href="{{ asset('dashboard') }}/assets/images/logo/favicon.png"
       type="image/png"
     />
   </head>
@@ -26,7 +26,7 @@
           <div class="text-center">
             <img
               class="img-error"
-              src="{{ asset('mazer') }}/assets/images/samples/error-500.svg"
+              src="{{ asset('dashboard') }}/assets/images/samples/error-500.svg"
               alt="Not Found"
             />
             <h1 class="error-title">System Error</h1>
