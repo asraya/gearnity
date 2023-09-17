@@ -859,7 +859,7 @@
                     </div>
                     <div class="ms-3">
                         <h5 class="text-primary">Email</h5>
-                        <p class="mb-0">info@necalpha.com</p>
+                        <p class="mb-0">info@gearnity.com</p>
                     </div>
                 </div>
             </div>

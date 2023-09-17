@@ -40,7 +40,15 @@
       <span>Config</span>
   </a>
 </li>
-    
+
+<li
+  class="sidebar-item  ">
+  <a href="{{ route('backend.master.ticket.index') }}" class='sidebar-link'>
+      <i class="bi bi-gear"></i>
+      <span>Ticket</span>
+  </a>
+</li>
+
 </ul>
 </div>
 </div>

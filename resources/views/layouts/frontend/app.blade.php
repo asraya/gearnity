@@ -64,7 +64,7 @@
 					</li>
 				</ul>        
         @auth
-        @if (auth()->user()->role_name == 'user')
+        @if (auth()->user()->role_name == 'user'||'mitra')
        	<!-- account btn --> <a href="{{ route('frontend.user.dashboard') }}" class="btn btn-outline-primary">{{ auth()->user()->name }}</a>
          @endif
         @if (auth()->user()->role_name == 'admin')
@@ -283,7 +283,7 @@
  <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>Necalpha</h2>
+            <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>Gearnity</h2>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -444,7 +444,7 @@
           <div class="col-lg-3 col-md-6">
               <h4 class="text-white mb-3">Contact</h4>
               <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jakarta, Indonesia</p>
-              <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@necalpha.com</p>
+              <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@gearnity.com</p>
               <div class="d-flex pt-2">
                   <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                   <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>

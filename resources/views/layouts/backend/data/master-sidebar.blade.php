@@ -20,5 +20,6 @@ class="sidebar-item  has-sub">
     <li class="submenu-item ">
         <a href="{{ route('backend.master.voucher.index') }}">{{ __('sidebar.voucher') }}</a>
     </li>
+    
 </ul>
 </li>

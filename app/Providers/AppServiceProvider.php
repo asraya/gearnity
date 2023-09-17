@@ -34,6 +34,7 @@ class AppServiceProvider extends ServiceProvider
 
         if (Schema::hasTable('web_configs')) {
             view()->share([
+            // front
                 'app_name' => WebConfig::where(['name' => 'app_name'])->first()['value'] ?? '-',
                 'app_logo' => WebConfig::where(['name' => 'app_logo'])->first()['file_path'] ?? '-',
                 'email' => WebConfig::where(['name' => 'email'])->first()['value'] ?? '-',
@@ -45,7 +46,14 @@ class AppServiceProvider extends ServiceProvider
                 'app_login' => WebConfig::where(['name' => 'app_login'])->first()['value'] ?? '-',
                 'app_signup' => WebConfig::where(['name' => 'app_signup'])->first()['value'] ?? '-',
                 'app_header_web' => WebConfig::where(['name' => 'app_header_web'])->first()['value'] ?? '-',
-
+            // generate certificate
+                'name_x' => WebConfig::where(['name' => 'name_x'])->first()['value'] ?? '-',
+                'name_y' => WebConfig::where(['name' => 'name_y'])->first()['value'] ?? '-',
+                'date_x' => WebConfig::where(['name' => 'date_x'])->first()['value'] ?? '-',
+                'date_y' => WebConfig::where(['name' => 'date_y'])->first()['value'] ?? '-',
+                'pdf_file' => WebConfig::where(['name' => 'pdf_file'])->first()['file_path'] ?? '-',
+                'csv_file' => WebConfig::where(['name' => 'csv_file'])->first()['file_path'] ?? '-',
+                'email_body' => WebConfig::where(['name' => 'email_body'])->first()['value'] ?? '-',
             ]);
         }
         Paginator::useBootstrapFive();

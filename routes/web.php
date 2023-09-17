@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\Feature\MitraController;
 use App\Http\Controllers\Backend\Feature\TransactionController as FeatureTransactionController;
 use App\Http\Controllers\Backend\Feature\WithdrawController;
 use App\Http\Controllers\Backend\Master\CategoryController;
+use App\Http\Controllers\Backend\Master\TicketController;
 use App\Http\Controllers\Backend\Master\BlogController;
 use App\Http\Controllers\Backend\Master\RewardController;
 use App\Http\Controllers\Backend\Master\VoucherController;
@@ -24,6 +25,7 @@ use App\Http\Controllers\User\TransactionController;
 use App\Http\Controllers\User\VoucherClaimController;
 use App\Http\Controllers\User\UsercourseController;
 use App\Http\Controllers\User\RewardUserController;
+use App\Http\Controllers\User\TicketUserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/backend/dashboard', function () {
@@ -47,6 +49,15 @@ Route::prefix('backend')->name('backend.')->middleware(['auth','role:admin'])->g
             Route::get('/edit/{id}',[CategoryController::class,'edit'])->name('edit');
             Route::post('/update/{id}',[CategoryController::class,'update'])->name('update');
             Route::get('/delete/{id}',[CategoryController::class,'delete'])->name('delete');
+        });
+
+        Route::prefix('ticket')->name('ticket.')->group(function(){
+            Route::get('/',[TicketController::class,'index'])->name('index');
+            Route::get('/create',[TicketController::class,'create'])->name('create');
+            Route::post('/store',[TicketController::class,'store'])->name('store');
+            Route::get('/show/{id}',[TicketController::class,'show'])->name('show');
+            Route::post('/update/{id}',[TicketController::class,'update'])->name('update');
+            Route::get('/delete/{id}',[TicketController::class,'delete'])->name('delete');
         });
 
         Route::prefix('blog')->name('blog.')->group(function(){
@@ -164,6 +175,12 @@ Route::name('frontend.')->group(function(){
                 Route::get('/invoice/{invoice}',[TransactionController::class,'invoice'])->name('invoice');
             });
 
+            Route::prefix('ticket')->name('ticket.')->group(function(){
+                Route::get('/',[TicketUserController::class,'index'])->name('index');
+                Route::get('/create',[TicketUserController::class,'create'])->name('create');
+                Route::post('/store',[TicketUserController::class,'store'])->name('store');
+            });
+
             Route::prefix('reward')->name('reward.')->group(function(){
                 Route::get('/',[RewardUserController::class,'index'])->name('index');
             });
@@ -179,7 +196,6 @@ Route::name('frontend.')->group(function(){
                 Route::get('/learn/{id}/{progress}',[UsercourseController::class,'learn'])->name('learn');
                 Route::get('/show/{id}/{progress}', [UsercourseController::class, 'show'])->name('show');
                 Route::post('/pdf', [UsercourseController::class,'generate'])->name('generate');
-
             });
 
         });

@@ -65,8 +65,6 @@ class BlogController extends Controller
 
     public function store(BlogRequest $request)
     {
-
-
         try {
             $request->merge(['slug' => Str::slug($request->title)]);
             $this->blog->store($request->all(),true,['image'],'mitra/logo');

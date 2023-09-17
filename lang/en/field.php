@@ -19,6 +19,11 @@ return [
     // Reward
     'reward_name' => 'Reward Name',
 
+    // Ticket
+    'ticket_image' => 'Reward Name',
+    'ticket_ticket' => 'Ticket',
+    'ticket_status' => 'Status',
+
     // Category
     'category_name' => 'Category Name',
 

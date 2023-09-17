@@ -18,7 +18,7 @@ class WebconfigSeeder extends Seeder
         WebConfig::create([
             'name'  => 'app_name',
             'label' => 'Application Name',
-            'value' => 'LARACOURSE',
+            'value' => 'Gearnity',
             'type'  => 0,
             
         ]);
@@ -26,7 +26,7 @@ class WebconfigSeeder extends Seeder
         WebConfig::create([
             'name'  => 'email',
             'label' => 'Email',
-            'value' => 'hey@nekalpa.com',
+            'value' => 'hey@gearnity.com',
             'type'  => 0
         ]);
         
@@ -90,6 +90,55 @@ class WebconfigSeeder extends Seeder
             'name'  => 'app_header_web',
             'label' => 'Header Web',
             'value' => 'Get A Fastest Loan With A Smart Way By Seating At Home',
+            'type'  => 0         
+        ]);
+
+        WebConfig::create([
+            'name'  => 'name_x',
+            'label' => 'Name X',
+            'value' => '155',
+            'type'  => 0         
+        ]);
+
+        WebConfig::create([
+            'name'  => 'name_y',
+            'label' => 'Name y',
+            'value' => '102',
+            'type'  => 0         
+        ]);
+
+        WebConfig::create([
+            'name'  => 'date_x',
+            'label' => 'Date x',
+            'value' => '80',
+            'type'  => 0         
+        ]);
+
+        WebConfig::create([
+            'name'  => 'date_y',
+            'label' => 'Date y',
+            'value' => '80',
+            'type'  => 0         
+        ]);
+
+        WebConfig::create([
+            'name'  => 'pdf_file',
+            'label' => 'Pdf File',
+            'value' => 'Pdf File',
+            'type'  => 0         
+        ]);
+
+        WebConfig::create([
+            'name'  => 'csv_file',
+            'label' => 'Csv File',
+            'value' => 'Csv File',
+            'type'  => 0         
+        ]);
+
+        WebConfig::create([
+            'name'  => 'email_body',
+            'label' => 'Email Body',
+            'value' => 'Hallo gearnity',
             'type'  => 0         
         ]);
     }

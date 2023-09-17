@@ -58,8 +58,6 @@ class CategoryController extends Controller
 
     public function store(CategoryRequest $request)
     {
-
-
         try {
             $request->merge(['slug' => Str::slug($request->name)]);
             $this->category->store($request->all());

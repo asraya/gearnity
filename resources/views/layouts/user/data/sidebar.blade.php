@@ -51,7 +51,7 @@
 </li>
 
 <li class="sidebar-item">
-    <a href="{{ route('frontend.user.transaction.index') }}" class='sidebar-link'>
+    <a href="{{ route('frontend.user.ticket.index') }}" class='sidebar-link'>
         <i class="bi bi-send"></i>
         <span>Ticket</span>
     </a>

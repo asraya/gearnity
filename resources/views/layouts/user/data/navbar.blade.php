@@ -46,7 +46,7 @@
                                     @if (Auth::user()->avatar)
                                     <img src="{{Auth::user()->avatar}}" class="user-photo" alt="avatar-{{ Auth::user()->name }}">
                                     @else
-                                    <img src="{{ asset('mazer') }}/assets/images/faces/1.jpg" class="user-photo">
+                                    <img src="{{ asset('dashboard') }}/assets/images/faces/1.jpg" class="user-photo">
                                     @endif
                                 </div>
                             </div>
